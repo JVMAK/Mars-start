@@ -14,6 +14,7 @@
         <module>mars-start-simple</module>
         <module>mars-start-mj</module>
         <module>mars-start-base</module>
+        <module>mars-cloud-start</module>
     </modules>
 
     <build>
