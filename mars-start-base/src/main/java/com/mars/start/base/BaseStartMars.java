@@ -39,12 +39,6 @@ public class BaseStartMars {
 			/* 加载框架数据 */
 			load(clazz,baseInitJdbc,suffix);
 
-			/* 启动after方法 */
-			StartAfter.after();
-
-			/* 执行定时任务 */
-			ExecuteMarsTimer.execute();
-
 			/* 启动netty */
 			MarsServer.start(getPort());
 

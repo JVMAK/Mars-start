@@ -23,7 +23,7 @@ public class StartBeans implements StartMap {
     @Override
     public void load(StartParam startParam) throws Exception {
         /*获取要扫描的包*/
-        String className = getClassName(startParam.getClazz());
+        String className = getClassName(startParam);
 
         /* 将要扫描的包名存到全局存储空间，给别的需要的地方使用 */
         constants.setAttr("rootPath", className);
@@ -34,12 +34,19 @@ public class StartBeans implements StartMap {
 
     /**
      * 截取main方法所在包名
-     * @param clazz 类
+     * @param startParam 类
      * @return 返回值
      * @throws Exception 异常
      */
-    private String getClassName(Class clazz) throws Exception {
-        String className = clazz.getName();
+    private String getClassName(StartParam startParam) throws Exception {
+        Class clazz = startParam.getClazz();
+        String startClassName = startParam.getStartClassName();
+        String className = "";
+        if(clazz != null){
+            className = clazz.getName();
+        } else if(startClassName != null){
+            className = startClassName;
+        }
         if(className.indexOf(".") < 0){
             throw new Exception("启动服务的main方法所在的类,必须放在两层包名中,比如[com.mars,com.test]等,不允许放在[com,cn]等包中,更不允许放在包外面");
         }
