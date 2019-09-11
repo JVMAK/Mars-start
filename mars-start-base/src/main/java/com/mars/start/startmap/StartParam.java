@@ -2,12 +2,22 @@ package com.mars.start.startmap;
 
 import com.mars.jdbc.base.BaseInitJdbc;
 
+/**
+ * 启动框架的参数
+ */
 public class StartParam {
 
+    /**
+     * 启动类
+     */
     private Class<?> clazz;
-
+    /**
+     * 加载JDBC的类
+     */
     private BaseInitJdbc baseInitJdbc;
-
+    /**
+     * 配置文件标识
+     */
     private String suffix;
 
     public Class<?> getClazz() {

@@ -7,7 +7,7 @@ public interface StartMap {
 
     /**
      * 要加载的东西
-     * @param startParam
+     * @param startParam 参数
      */
     void load(StartParam startParam) throws Exception ;
 }

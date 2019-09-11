@@ -5,6 +5,9 @@ import com.mars.core.load.LoadClass;
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.StartParam;
 
+/**
+ * 扫描包
+ */
 public class StartBeans implements StartMap {
 
     /**
@@ -14,8 +17,8 @@ public class StartBeans implements StartMap {
 
     /**
      * 扫描包
-     * @param startParam
-     * @throws Exception
+     * @param startParam 参数
+     * @throws Exception 异常
      */
     @Override
     public void load(StartParam startParam) throws Exception {
@@ -31,9 +34,9 @@ public class StartBeans implements StartMap {
 
     /**
      * 截取main方法所在包名
-     * @param clazz
-     * @return
-     * @throws Exception
+     * @param clazz 类
+     * @return 返回值
+     * @throws Exception 异常
      */
     private String getClassName(Class clazz) throws Exception {
         String className = clazz.getName();

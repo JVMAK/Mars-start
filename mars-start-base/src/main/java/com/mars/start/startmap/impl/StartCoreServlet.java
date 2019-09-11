@@ -5,6 +5,9 @@ import com.mars.mvc.servlet.MarsCoreServlet;
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.StartParam;
 
+/**
+ * 配置核心servlet
+ */
 public class StartCoreServlet implements StartMap {
 
     /**
@@ -14,8 +17,8 @@ public class StartCoreServlet implements StartMap {
 
     /**
      * 配置核心servlet
-     * @param startParam
-     * @throws Exception
+     * @param startParam 参数
+     * @throws Exception 异常
      */
     @Override
     public void load(StartParam startParam) throws Exception {

@@ -2,26 +2,14 @@ package com.mars.start.base;
 
 import com.alibaba.fastjson.JSONObject;
 import com.mars.core.after.StartAfter;
-import com.mars.core.constant.MarsConstant;
-import com.mars.core.constant.MarsSpace;
-import com.mars.core.load.LoadClass;
 import com.mars.core.logger.MarsLogger;
 import com.mars.core.util.ConfigUtil;
-import com.mars.junit.StartList;
-import com.mars.mvc.load.LoadInters;
 import com.mars.netty.server.MarsServer;
-import com.mars.ioc.load.LoadEasyBean;
 import com.mars.jdbc.base.BaseInitJdbc;
-import com.mars.mvc.load.LoadController;
-import com.mars.mvc.servlet.MarsCoreServlet;
-import com.mars.start.startmap.StartLoadList;
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.StartParam;
 import com.mars.timer.execute.ExecuteMarsTimer;
-import com.mars.timer.load.LoadMarsTimer;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,7 +21,7 @@ public class BaseStartMars {
 	
 	private static MarsLogger log = MarsLogger.getLogger(BaseStartMars.class);
 
-	private static Map<Integer, StartMap> startList = new HashMap<>();
+	private static Map<Integer, StartMap> startList;
 
 	public static void setStartList(Map<Integer, StartMap> startList) {
 		BaseStartMars.startList = startList;

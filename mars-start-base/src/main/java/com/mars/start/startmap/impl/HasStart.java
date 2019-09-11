@@ -5,6 +5,9 @@ import com.mars.core.constant.MarsSpace;
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.StartParam;
 
+/**
+ * 标识createBean方法已经调用完毕
+ */
 public class HasStart implements StartMap {
 
     /**
@@ -14,8 +17,8 @@ public class HasStart implements StartMap {
 
     /**
      * 标识createBean方法已经调用完毕
-     * @param startParam
-     * @throws Exception
+     * @param startParam 参数
+     * @throws Exception 异常
      */
     @Override
     public void load(StartParam startParam) throws Exception {

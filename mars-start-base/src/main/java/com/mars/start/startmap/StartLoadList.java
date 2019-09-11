@@ -5,8 +5,15 @@ import com.mars.start.startmap.impl.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 启动框架需要加载的资源
+ */
 public class StartLoadList {
 
+    /**
+     * 启动框架需要加载的资源
+     * @return 返回值
+     */
     public static Map<Integer, StartMap> initStartList(){
 
         Map<Integer, StartMap> startList = new HashMap<>();
