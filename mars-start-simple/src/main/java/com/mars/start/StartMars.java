@@ -1,6 +1,7 @@
 package com.mars.start;
 
 import com.mars.start.base.BaseStartMars;
+import com.mars.start.startmap.StartLoadList;
 
 /**
  * 启动Mars框架
@@ -13,10 +14,11 @@ public class StartMars {
 	 * @param clazz
 	 */
 	public static void start(Class<?> clazz,String[] args) {
+		BaseStartMars.setStartList(StartLoadList.initStartList());
 		if(args != null && args[0] != null){
-			BaseStartMars.start(clazz,null,args[0],null);
+			BaseStartMars.start(clazz,null,args[0]);
 		} else {
-			BaseStartMars.start(clazz,null,null,null);
+			BaseStartMars.start(clazz,null,null);
 		}
 	}
 

@@ -4,9 +4,13 @@ import com.mars.cloud.registered.Registered;
 import com.mars.junit.StartList;
 import com.mars.mybatis.init.InitJdbc;
 import com.mars.start.base.BaseStartMars;
+import com.mars.start.startmap.StartLoadList;
+import com.mars.start.startmap.StartMap;
+import com.mars.start.startmap.StartParam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 启动Mars框架
@@ -21,10 +25,14 @@ public class StartMars {
      * @param clazz 类
      */
     public static void start(Class<?> clazz, String[] args) {
+        Map<Integer, StartMap> startMapMap = StartLoadList.initStartList();
+        startMapMap.put(9, new StartRegistered());
+        BaseStartMars.setStartList(startMapMap);
+
         if (args != null && args[0] != null) {
-            BaseStartMars.start(clazz, new InitJdbc(), args[0], initCloud());
+            BaseStartMars.start(clazz, new InitJdbc(), args[0]);
         } else {
-            BaseStartMars.start(clazz, new InitJdbc(), null, initCloud());
+            BaseStartMars.start(clazz, new InitJdbc(), null);
         }
     }
 
@@ -37,23 +45,10 @@ public class StartMars {
         start(clazz,null);
     }
 
-
-    /**
-     * 加载cloud需要的数据
-     *
-     * @throws Exception 异常
-     */
-    private static List<StartList> initCloud() {
-        List<StartList> startList = new ArrayList<>();
-
-        StartList item = new StartList() {
-            @Override
-            public void load() throws Exception {
-                Registered.register();
-            }
-        };
-
-        startList.add(item);
-        return startList;
+    static class StartRegistered implements StartMap {
+        @Override
+        public void load(StartParam startParam) throws Exception {
+            Registered.register();
+        }
     }
 }
