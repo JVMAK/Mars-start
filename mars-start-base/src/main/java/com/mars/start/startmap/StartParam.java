@@ -12,6 +12,10 @@ public class StartParam {
      */
     private Class<?> clazz;
     /**
+     * 启动类所在的包
+     */
+    private String startClassName;
+    /**
      * 加载JDBC的类
      */
     private BaseInitJdbc baseInitJdbc;
@@ -22,6 +26,14 @@ public class StartParam {
 
     public Class<?> getClazz() {
         return clazz;
+    }
+
+    public String getStartClassName() {
+        return startClassName;
+    }
+
+    public void setStartClassName(String startClassName) {
+        this.startClassName = startClassName;
     }
 
     public void setClazz(Class<?> clazz) {

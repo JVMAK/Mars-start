@@ -1,6 +1,8 @@
 package com.mars.junit;
 
 import com.mars.mj.init.InitJdbc;
+import com.mars.start.base.MarsJunitStart;
+import com.mars.start.startmap.StartLoadList;
 
 /**
  * junit
@@ -12,7 +14,8 @@ public abstract class MarsJunit {
      * @param packName
      */
     public void init(String packName,String suffix){
-        MarsJunitStart.start(new InitJdbc(),packName,this,null,suffix);
+        MarsJunitStart.setStartList(StartLoadList.initTestStartList());
+        MarsJunitStart.start(new InitJdbc(),packName,this,suffix);
     }
 
     /**
