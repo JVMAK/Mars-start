@@ -1,15 +1,14 @@
 package com.mars.start.base;
 
-import com.mars.core.after.StartAfter;
 import com.mars.core.constant.MarsConstant;
 import com.mars.core.constant.MarsSpace;
 import com.mars.core.load.LoadHelper;
 import com.mars.core.load.WriteFields;
-import com.mars.core.logger.MarsLogger;
 import com.mars.jdbc.base.BaseInitJdbc;
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.StartParam;
-import com.mars.timer.execute.ExecuteMarsTimer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
@@ -18,7 +17,7 @@ import java.util.Map;
  */
 public class MarsJunitStart {
 
-    private static MarsLogger log = MarsLogger.getLogger(MarsJunitStart.class);
+    private static Logger log = LoggerFactory.getLogger(MarsJunitStart.class);
 
     /**
      * 获取全局存储空间
@@ -42,12 +41,6 @@ public class MarsJunitStart {
                 /* 加载框架数据 */
                 load(baseInitJdbc,packName,suffix);
 
-                /* 启动after方法 */
-                StartAfter.after();
-
-                /* 执行定时任务 */
-                ExecuteMarsTimer.execute();
-
                 /* 标记已经为单测创建过资源了 */
                 constants.setAttr(MarsConstant.HAS_TEST,"yes");
             }
@@ -60,8 +53,7 @@ public class MarsJunitStart {
 
             log.info("开始执行单测......");
         } catch (Exception e) {
-            log.error("",e);
-            System.exit(0);
+            log.error("启动失败",e);
         }
     }
 
