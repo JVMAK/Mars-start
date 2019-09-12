@@ -31,10 +31,8 @@ public abstract class MarsJunit {
         startList.put(4, new StartBeanObject());
         startList.put(5, new HasStart());
         startList.put(6, new StartMarsTimer());
-        startList.put(7, new StartController());
-        startList.put(8, new StartRegistered());
-        startList.put(9, new StartLoadAfter());
-        startList.put(10, new StartExecuteTimer());
+        startList.put(7, new StartLoadAfter());
+        startList.put(8, new StartExecuteTimer());
 
         MarsJunitStart.setStartList(startList);
         MarsJunitStart.start(new InitJdbc(), packName, this, suffix);
