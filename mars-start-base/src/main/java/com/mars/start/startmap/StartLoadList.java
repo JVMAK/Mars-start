@@ -27,7 +27,7 @@ public class StartLoadList {
         startList.put(6, new StartInter());
         startList.put(7, new HasStart());
         startList.put(8, new StartMarsTimer());
-        startList.put(9, new StartAfter());
+        startList.put(9, new StartLoadAfter());
         startList.put(10, new StartExecuteTimer());
         return startList;
     }
@@ -46,7 +46,7 @@ public class StartLoadList {
         startList.put(3, new StartBeanObject());
         startList.put(4, new HasStart());
         startList.put(5, new StartMarsTimer());
-        startList.put(6, new StartAfter());
+        startList.put(6, new StartLoadAfter());
         startList.put(7, new StartExecuteTimer());
         return startList;
 

@@ -1,9 +1,10 @@
 package com.mars.start.startmap.impl;
 
+import com.mars.core.after.StartAfter;
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.StartParam;
 
-public class StartAfter implements StartMap {
+public class StartLoadAfter implements StartMap {
 
     /**
      * 启动after方法
@@ -12,6 +13,6 @@ public class StartAfter implements StartMap {
      */
     @Override
     public void load(StartParam startParam) throws Exception {
-        com.mars.core.after.StartAfter.after();
+        StartAfter.after();
     }
 }

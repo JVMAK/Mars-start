@@ -1,14 +1,13 @@
 package com.mars.start.base;
 
 import com.alibaba.fastjson.JSONObject;
-import com.mars.core.after.StartAfter;
-import com.mars.core.logger.MarsLogger;
 import com.mars.core.util.ConfigUtil;
 import com.mars.netty.server.MarsServer;
 import com.mars.jdbc.base.BaseInitJdbc;
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.StartParam;
-import com.mars.timer.execute.ExecuteMarsTimer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
@@ -19,7 +18,7 @@ import java.util.Map;
  */
 public class BaseStartMars {
 	
-	private static MarsLogger log = MarsLogger.getLogger(BaseStartMars.class);
+	private static Logger log = LoggerFactory.getLogger(BaseStartMars.class);
 
 	private static Map<Integer, StartMap> startList;
 
@@ -43,8 +42,7 @@ public class BaseStartMars {
 			MarsServer.start(getPort());
 
 		} catch (Exception e) {
-			log.error("",e);
-			System.exit(0);
+			log.error("启动失败",e);
 		}
 	}
 	
