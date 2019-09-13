@@ -5,7 +5,6 @@ import com.mars.core.util.ConfigUtil;
 import com.mars.netty.server.MarsServer;
 import com.mars.jdbc.base.BaseInitJdbc;
 import com.mars.start.startmap.StartMap;
-import com.mars.start.startmap.StartParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,7 +35,7 @@ public class BaseStartMars {
 			log.info("程序启动中......");
 
 			/* 加载框架数据 */
-			load(clazz,baseInitJdbc,suffix);
+			StartLoad.load(baseInitJdbc,clazz,suffix,startList);
 
 			/* 启动netty */
 			MarsServer.start(getPort());
@@ -45,22 +44,6 @@ public class BaseStartMars {
 			log.error("启动失败",e);
 		}
 	}
-	
-	/**
-	 * 加载所需的资源
-	 */
-	private static void load(Class<?> clazz, BaseInitJdbc baseInitJdbc,String suffix) throws Exception{
-		StartParam startParam = new StartParam();
-		startParam.setClazz(clazz);
-		startParam.setBaseInitJdbc(baseInitJdbc);
-		startParam.setSuffix(suffix);
-
-		for(int i=0; i < startList.size(); i++){
-			startList.get(i).load(startParam);
-		}
-	}
-
-
 	
 	/**
 	 * 获取端口号，默认8080

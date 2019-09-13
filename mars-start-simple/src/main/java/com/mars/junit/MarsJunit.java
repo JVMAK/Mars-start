@@ -12,7 +12,7 @@ public abstract class MarsJunit {
      * 加载项目启动的必要数据
      * @param packName
      */
-    public void init(String packName,String suffix){
+    public void init(Class packName,String suffix){
         MarsJunitStart.setStartList(StartLoadList.initTestStartList());
         MarsJunitStart.start(null,packName,this,suffix);
     }
@@ -21,7 +21,7 @@ public abstract class MarsJunit {
      * 加载项目启动的必要数据
      * @param packName
      */
-    public void init(String packName){
+    public void init(Class packName){
         init(packName,null);
     }
 

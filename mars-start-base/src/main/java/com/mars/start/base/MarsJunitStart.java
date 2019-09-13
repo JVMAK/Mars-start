@@ -6,7 +6,6 @@ import com.mars.core.load.LoadHelper;
 import com.mars.core.load.WriteFields;
 import com.mars.jdbc.base.BaseInitJdbc;
 import com.mars.start.startmap.StartMap;
-import com.mars.start.startmap.StartParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,13 +32,13 @@ public class MarsJunitStart {
     /**
      * 启动Mars框架
      */
-    public static void start(BaseInitJdbc baseInitJdbc, String packName, Object obj,String suffix) {
+    public static void start(BaseInitJdbc baseInitJdbc, Class<?> packName, Object obj,String suffix) {
         try {
             if(constants.getAttr(MarsConstant.HAS_TEST) == null){
                 log.info("程序启动中......");
 
                 /* 加载框架数据 */
-                load(baseInitJdbc,packName,suffix);
+                StartLoad.load(baseInitJdbc,packName,suffix,startList);
 
                 /* 标记已经为单测创建过资源了 */
                 constants.setAttr(MarsConstant.HAS_TEST,"yes");
@@ -54,21 +53,6 @@ public class MarsJunitStart {
             log.info("开始执行单测......");
         } catch (Exception e) {
             log.error("启动失败",e);
-        }
-    }
-
-    /**
-     * 加载所需的资源
-     */
-    private static void load(BaseInitJdbc baseInitJdbc,String packName,String suffix) throws Exception{
-
-        StartParam startParam = new StartParam();
-        startParam.setStartClassName(packName);
-        startParam.setBaseInitJdbc(baseInitJdbc);
-        startParam.setSuffix(suffix);
-
-        for(int i=0; i < startList.size(); i++){
-            startList.get(i).load(startParam);
         }
     }
 

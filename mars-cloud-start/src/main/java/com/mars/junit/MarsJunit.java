@@ -21,7 +21,7 @@ public abstract class MarsJunit {
      *
      * @param packName 包名
      */
-    public void init(String packName, String suffix) {
+    public void init(Class packName, String suffix) {
 
         Map<Integer, StartMap> startList = new HashMap<>();
         startList.put(0, new StartConfig());
@@ -43,7 +43,7 @@ public abstract class MarsJunit {
      *
      * @param packName 包名
      */
-    public void init(String packName) {
+    public void init(Class packName) {
         init(packName, null);
     }
 
