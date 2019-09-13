@@ -9,6 +9,10 @@
     <version>2.1.6</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
+    </properties>
+
     <modules>
         <module>mars-start-mybatis</module>
         <module>mars-start-simple</module>
@@ -16,6 +20,19 @@
         <module>mars-start-base</module>
         <module>mars-cloud-start</module>
     </modules>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    <licenses>
+        <license>
+            <name>The GPL Software License, Version 3.0</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <build>
         <plugins>
