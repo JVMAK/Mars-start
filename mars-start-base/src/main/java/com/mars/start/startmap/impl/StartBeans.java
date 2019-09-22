@@ -40,7 +40,9 @@ public class StartBeans implements StartMap {
      */
     private String getClassName(StartParam startParam) throws Exception {
         String className = startParam.getClazz().getName();
-        className = className.substring(0,className.lastIndexOf("."));
+        if(className.lastIndexOf(".") > 0){
+            className = className.substring(0,className.lastIndexOf("."));
+        }
 
         if(className.indexOf(".") < 0){
             throw new Exception("启动服务的main方法所在的类,必须放在两层包名中,比如[com.mars,com.test]等,不允许放在[com,cn]等包中,更不允许放在包外面");
