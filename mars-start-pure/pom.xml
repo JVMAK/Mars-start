@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mars-start-mj</artifactId>
+    <artifactId>mars-start-pure</artifactId>
 
     <dependencies>
         <dependency>
