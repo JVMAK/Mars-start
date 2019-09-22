@@ -1,11 +1,10 @@
 package com.mars.junit;
 
-import com.mars.mybatis.init.InitJdbc;
+import com.mars.mj.init.InitJdbc;
 import com.mars.start.base.MarsJunitStart;
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.impl.*;
 import com.mars.startlist.StartFeign;
-import com.mars.startlist.StartRegistered;
 import org.junit.Before;
 
 import java.util.HashMap;
