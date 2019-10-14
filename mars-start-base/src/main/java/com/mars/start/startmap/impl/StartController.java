@@ -16,6 +16,6 @@ public class StartController implements StartMap {
      */
     @Override
     public void load(StartParam startParam) throws Exception {
-        LoadController.loadContrl();
+        LoadController.loadControl();
     }
 }
