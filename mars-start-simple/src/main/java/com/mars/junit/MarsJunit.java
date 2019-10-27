@@ -1,32 +1,15 @@
 package com.mars.junit;
 
-import com.mars.start.base.MarsJunitStart;
-import com.mars.start.startmap.StartLoadList;
+import com.mars.jdbc.base.BaseInitJdbc;
+import com.mars.start.base.BaseJunit;
 
 /**
  * junit
  */
-public abstract class MarsJunit {
+public abstract class MarsJunit extends BaseJunit {
 
-    /**
-     * 加载项目启动的必要数据
-     * @param packName
-     */
-    public void init(Class packName,String suffix){
-        MarsJunitStart.setStartList(StartLoadList.initTestStartList());
-        MarsJunitStart.start(null,packName,this,suffix);
+    @Override
+    public BaseInitJdbc getBaseInitJdbc() {
+        return null;
     }
-
-    /**
-     * 加载项目启动的必要数据
-     * @param packName
-     */
-    public void init(Class packName){
-        init(packName,null);
-    }
-
-    /**
-     * 单测开始前
-     */
-    public abstract void before();
 }
