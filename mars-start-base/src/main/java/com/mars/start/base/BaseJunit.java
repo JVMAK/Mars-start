@@ -15,10 +15,10 @@ public abstract class BaseJunit {
 
     public BaseJunit(){
         MarsTest marsTest = this.getClass().getAnnotation(MarsTest.class);
-        if(marsTest == null || marsTest.testClass() == null){
+        if(marsTest == null || marsTest.startClass() == null){
             logger.error("没有正确的配置MarsTest注解");
         } else {
-            init(marsTest.testClass(),marsTest.config());
+            init(marsTest.startClass(),marsTest.config());
         }
     }
 
