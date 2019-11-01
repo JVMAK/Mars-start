@@ -1,13 +1,13 @@
 package com.mars.start.startmap.impl;
 
-import com.mars.mvc.load.LoadController;
+import com.mars.mvc.load.LoadMarsApi;
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.StartParam;
 
 /**
  * 创建controller对象
  */
-public class StartController implements StartMap {
+public class StartMarsApi implements StartMap {
 
     /**
      * 创建controller对象
@@ -16,6 +16,6 @@ public class StartController implements StartMap {
      */
     @Override
     public void load(StartParam startParam) throws Exception {
-        LoadController.loadControl();
+        LoadMarsApi.loadMarsApis();
     }
 }
