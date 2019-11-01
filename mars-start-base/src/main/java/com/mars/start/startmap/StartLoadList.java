@@ -24,7 +24,7 @@ public class StartLoadList {
         startList.put(3, new StartBeans());
         startList.put(4, new StartJDBC());
         startList.put(5, new StartBeanObject());
-        startList.put(6, new StartController());
+        startList.put(6, new StartMarsApi());
         startList.put(7, new StartInter());
         startList.put(8, new HasStart());
         startList.put(9, new StartMarsTimer());
