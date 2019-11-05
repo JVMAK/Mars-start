@@ -2,6 +2,7 @@ package com.mars.start.startmap.impl;
 
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.StartParam;
+import com.mars.timer.load.LoadMarsTimer;
 
 /**
  * 加载timer对象
@@ -15,6 +16,6 @@ public class StartMarsTimer implements StartMap {
      */
     @Override
     public void load(StartParam startParam) throws Exception {
-        com.mars.timer.load.LoadMarsTimer.loadMarsTimers();
+        LoadMarsTimer.loadMarsTimers();
     }
 }
