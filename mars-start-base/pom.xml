@@ -24,11 +24,6 @@
         </dependency>
         <dependency>
             <groupId>com.github.yuyenews</groupId>
-            <artifactId>mars-timer</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.yuyenews</groupId>
             <artifactId>mars-redis</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
