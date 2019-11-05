@@ -1,6 +1,6 @@
 package com.mars.start.startmap.impl;
 
-import com.mars.ioc.load.LoadMarsBean;
+import com.mars.core.ioc.load.LoadMarsBean;
 import com.mars.start.startmap.StartMap;
 import com.mars.start.startmap.StartParam;
 
