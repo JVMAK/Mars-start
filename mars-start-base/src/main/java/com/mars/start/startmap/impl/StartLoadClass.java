@@ -20,7 +20,7 @@ public class StartLoadClass implements StartMap {
         String className = getClassName(startParam);
 
         /* 获取此包下面的所有类（包括jar中的） */
-        LoadClass.sacnClass(className);
+        LoadClass.scanClass(className);
     }
 
     /**
