@@ -2,8 +2,8 @@ package com.mars.start.base;
 
 import com.alibaba.fastjson.JSONObject;
 import com.mars.core.util.ConfigUtil;
+import com.mars.jdbc.load.InitJdbc;
 import com.mars.netty.server.MarsServer;
-import com.mars.jdbc.base.BaseInitJdbc;
 import com.mars.start.startmap.StartMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,13 +29,13 @@ public class BaseStartMars {
 	 * 启动Mars框架
 	 * @param clazz
 	 */
-	public static void start(Class<?> clazz, BaseInitJdbc baseInitJdbc, String suffix) {
+	public static void start(Class<?> clazz, InitJdbc initJdbc, String suffix) {
 		try {
 			
 			log.info("程序启动中......");
 
 			/* 加载框架数据 */
-			StartLoad.load(baseInitJdbc,clazz,suffix,startList);
+			StartLoad.load(initJdbc,clazz,suffix,startList);
 
 			/* 启动netty */
 			MarsServer.start(getPort());

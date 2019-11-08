@@ -4,7 +4,7 @@ import com.mars.core.constant.MarsConstant;
 import com.mars.core.constant.MarsSpace;
 import com.mars.core.load.LoadHelper;
 import com.mars.core.load.WriteFields;
-import com.mars.jdbc.base.BaseInitJdbc;
+import com.mars.jdbc.load.InitJdbc;
 import com.mars.start.startmap.StartMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,13 +32,13 @@ public class MarsJunitStart {
     /**
      * 启动Mars框架
      */
-    public static void start(BaseInitJdbc baseInitJdbc, Class<?> packName, Object obj,String suffix) {
+    public static void start(InitJdbc initJdbc, Class<?> packName, Object obj, String suffix) {
         try {
             if(constants.getAttr(MarsConstant.HAS_TEST) == null){
                 log.info("程序启动中......");
 
                 /* 加载框架数据 */
-                StartLoad.load(baseInitJdbc,packName,suffix,startList);
+                StartLoad.load(initJdbc,packName,suffix,startList);
 
                 /* 标记已经为单测创建过资源了 */
                 constants.setAttr(MarsConstant.HAS_TEST,"yes");

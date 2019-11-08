@@ -5,7 +5,7 @@
     <parent>
         <artifactId>Mars-start</artifactId>
         <groupId>com.github.yuyenews</groupId>
-        <version>3.0.3</version>
+        <version>3.0.5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,17 +14,17 @@
     <dependencies>
         <dependency>
             <groupId>com.github.yuyenews</groupId>
-            <artifactId>mars-jdbc-base</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.yuyenews</groupId>
             <artifactId>mars-mvc</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.yuyenews</groupId>
             <artifactId>mars-redis</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.yuyenews</groupId>
+            <artifactId>mars-jdbc</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>

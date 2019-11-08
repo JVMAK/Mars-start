@@ -1,6 +1,6 @@
 package com.mars.start.startmap;
 
-import com.mars.jdbc.base.BaseInitJdbc;
+import com.mars.jdbc.load.InitJdbc;
 
 /**
  * 启动框架的参数
@@ -18,7 +18,7 @@ public class StartParam {
     /**
      * 加载JDBC的类
      */
-    private BaseInitJdbc baseInitJdbc;
+    private InitJdbc initJdbc;
     /**
      * 配置文件标识
      */
@@ -40,12 +40,12 @@ public class StartParam {
         this.clazz = clazz;
     }
 
-    public BaseInitJdbc getBaseInitJdbc() {
-        return baseInitJdbc;
+    public InitJdbc getInitJdbc() {
+        return initJdbc;
     }
 
-    public void setBaseInitJdbc(BaseInitJdbc baseInitJdbc) {
-        this.baseInitJdbc = baseInitJdbc;
+    public void setInitJdbc(InitJdbc initJdbc) {
+        this.initJdbc = initJdbc;
     }
 
     public String getSuffix() {
