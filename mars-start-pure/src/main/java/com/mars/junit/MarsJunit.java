@@ -1,7 +1,6 @@
 package com.mars.junit;
 
-import com.mars.jdbc.base.BaseInitJdbc;
-import com.mars.mj.init.InitJdbc;
+import com.mars.jdbc.load.InitJdbc;
 import com.mars.start.base.BaseJunit;
 
 /**
@@ -10,7 +9,7 @@ import com.mars.start.base.BaseJunit;
 public abstract class MarsJunit extends BaseJunit {
 
     @Override
-    public BaseInitJdbc getBaseInitJdbc() {
+    public InitJdbc getInitJdbc() {
         return new InitJdbc();
     }
 }

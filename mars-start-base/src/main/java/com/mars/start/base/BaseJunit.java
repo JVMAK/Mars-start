@@ -1,7 +1,7 @@
 package com.mars.start.base;
 
 import com.mars.core.annotation.MarsTest;
-import com.mars.jdbc.base.BaseInitJdbc;
+import com.mars.jdbc.load.InitJdbc;
 import com.mars.start.startmap.StartLoadList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,12 +33,12 @@ public abstract class BaseJunit {
         }
 
         MarsJunitStart.setStartList(StartLoadList.initTestStartList());
-        MarsJunitStart.start(getBaseInitJdbc(),packName,this,suffix);
+        MarsJunitStart.start(getInitJdbc(),packName,this,suffix);
     }
 
     /**
      * 获取加载jdbc的类
      * @return 类
      */
-    public abstract BaseInitJdbc getBaseInitJdbc();
+    public abstract InitJdbc getInitJdbc();
 }

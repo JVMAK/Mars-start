@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.yuyenews</groupId>
     <artifactId>Mars-start</artifactId>
-    <version>3.0.3</version>
+    <version>3.0.5</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -14,7 +14,6 @@
     </properties>
 
     <modules>
-        <module>mars-start-mybatis</module>
         <module>mars-start-simple</module>
         <module>mars-start-pure</module>
         <module>mars-start-base</module>

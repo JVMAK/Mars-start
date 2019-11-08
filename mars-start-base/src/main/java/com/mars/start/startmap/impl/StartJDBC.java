@@ -15,8 +15,8 @@ public class StartJDBC implements StartMap {
      */
     @Override
     public void load(StartParam startParam) throws Exception {
-        if(startParam.getBaseInitJdbc() != null){
-            startParam.getBaseInitJdbc().init();
+        if(startParam.getInitJdbc() != null){
+            startParam.getInitJdbc().init();
         }
     }
 }
