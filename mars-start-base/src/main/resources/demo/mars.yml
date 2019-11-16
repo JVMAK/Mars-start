@@ -8,8 +8,7 @@ jwtTime: 20
 timeOut:
   readTimeOut: 10
   writeTimeOut: 2000000000
-#请求数据的最大值（默认10485760）
-maxContentLength: 10
+
 #配置跨域请求
 cross_domain:
   origin: "*"
@@ -28,24 +27,6 @@ jdbc:
       username: root
       password: rootroot
       driverClassName: com.mysql.cj.jdbc.Driver
-
-  #配置mybatis方言
-  dialect: mysql
-  #配置要扫描的mapper.xml 文件存放路径
-  mappers: mappers
-
-  #mybatis配置文件路径，必须在classpath目录下
-  #这个属性不建议配置，除非你有自己需要对mybatis配置的东西，否则不要配这个属性
-  config-location: mybatis.xml
-
-#log4j2 配置文件的路径
-#相对路径必须以classPath- 开头，区分大小写，并且文件必须直接或者间接在classpath目录下
-#不可以有多余的空格
-#绝对路径直接写即可，不需要classPath开头
-logFile: classPath-log4j2.xml
-
-
-#以下配置 必须在导入Mars-extends 中的相应的jar包后 才生效
 
 #redis配置
 redis:
@@ -72,6 +53,9 @@ redis:
       # 这两个可以不配置
       connectionTimeout: 1000
       soTimeout: 1000
+
+
+#以下配置 必须在导入Mars-extends 中的相应的jar包后 才生效
 
 #邮件配置 只支持smtp
 mail:
