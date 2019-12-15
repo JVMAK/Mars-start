@@ -15,16 +15,14 @@ public class StartLoad {
      * 加载所需的资源
      * @param initJdbc jdbc加载器
      * @param packName 要扫描的包
-     * @param suffix 配置文件后缀
      * @param startList 要加载的责任链
      * @throws Exception 异常
      */
-    public static void load(InitJdbc initJdbc, Class<?> packName, String suffix, Map<Integer, StartMap> startList) throws Exception{
+    public static void load(InitJdbc initJdbc, Class<?> packName, Map<Integer, StartMap> startList) throws Exception{
 
         StartParam startParam = new StartParam();
         startParam.setClazz(packName);
         startParam.setInitJdbc(initJdbc);
-        startParam.setSuffix(suffix);
 
         for(int i=0; i < startList.size(); i++){
             startList.get(i).load(startParam);
