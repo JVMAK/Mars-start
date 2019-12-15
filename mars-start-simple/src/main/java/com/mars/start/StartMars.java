@@ -22,12 +22,4 @@ public class StartMars {
 		}
 		BaseStartMars.start(clazz,null);
 	}
-
-	/**
-	 * 启动Mars框架
-	 * @param clazz
-	 */
-	public static void start(Class<?> clazz){
-		start(clazz,null);
-	}
 }
