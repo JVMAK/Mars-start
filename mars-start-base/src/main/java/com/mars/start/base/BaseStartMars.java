@@ -1,7 +1,6 @@
 package com.mars.start.base;
 
-import com.alibaba.fastjson.JSONObject;
-import com.mars.core.util.ConfigUtil;
+import com.mars.core.util.MarsConfiguration;
 import com.mars.jdbc.load.InitJdbc;
 import com.mars.netty.server.MarsServer;
 import com.mars.start.startmap.StartMap;
@@ -29,13 +28,13 @@ public class BaseStartMars {
 	 * 启动Mars框架
 	 * @param clazz
 	 */
-	public static void start(Class<?> clazz, InitJdbc initJdbc, String suffix) {
+	public static void start(Class<?> clazz, InitJdbc initJdbc) {
 		try {
 			
 			log.info("程序启动中......");
 
 			/* 加载框架数据 */
-			StartLoad.load(initJdbc,clazz,suffix,startList);
+			StartLoad.load(initJdbc,clazz,startList);
 
 			/* 启动netty */
 			MarsServer.start(getPort());
@@ -50,13 +49,6 @@ public class BaseStartMars {
 	 * @return
 	 */
 	private static int getPort() {
-
-		JSONObject jsonObject = ConfigUtil.getConfig();
-		Object por = jsonObject.get("port");
-		if(por!=null) {
-			return Integer.parseInt(por.toString());
-		}
-
-		return 8080;
+		return MarsConfiguration.getConfig().port();
 	}
 }

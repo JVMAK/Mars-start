@@ -32,13 +32,13 @@ public class MarsJunitStart {
     /**
      * 启动Mars框架
      */
-    public static void start(InitJdbc initJdbc, Class<?> packName, Object obj, String suffix) {
+    public static void start(InitJdbc initJdbc, Class<?> packName, Object obj) {
         try {
             if(constants.getAttr(MarsConstant.HAS_TEST) == null){
                 log.info("程序启动中......");
 
                 /* 加载框架数据 */
-                StartLoad.load(initJdbc,packName,suffix,startList);
+                StartLoad.load(initJdbc,packName,startList);
 
                 /* 标记已经为单测创建过资源了 */
                 constants.setAttr(MarsConstant.HAS_TEST,"yes");

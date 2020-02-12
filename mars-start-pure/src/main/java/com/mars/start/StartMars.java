@@ -1,5 +1,7 @@
 package com.mars.start;
 
+import com.mars.core.base.config.MarsConfig;
+import com.mars.core.util.MarsConfiguration;
 import com.mars.jdbc.load.InitJdbc;
 import com.mars.start.base.BaseStartMars;
 import com.mars.start.startmap.StartLoadList;
@@ -14,21 +16,11 @@ public class StartMars {
      * 启动Mars框架
      * @param clazz
      */
-    public static void start(Class<?> clazz,String[] args){
+    public static void start(Class<?> clazz, MarsConfig marsConfig){
         BaseStartMars.setStartList(StartLoadList.initStartList());
-
-        if(args != null && args.length > 0 && args[0] != null){
-            BaseStartMars.start(clazz,new InitJdbc(),args[0]);
-        } else {
-            BaseStartMars.start(clazz,new InitJdbc(),null);
+        if(marsConfig != null){
+            MarsConfiguration.loadConfig(marsConfig);
         }
-    }
-
-    /**
-     * 启动Mars框架
-     * @param clazz
-     */
-    public static void start(Class<?> clazz){
-        start(clazz,null);
+        BaseStartMars.start(clazz,new InitJdbc());
     }
 }
